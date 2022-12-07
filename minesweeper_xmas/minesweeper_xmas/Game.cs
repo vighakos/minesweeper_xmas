@@ -12,6 +12,7 @@ namespace minesweeper_xmas
 {
     public partial class Game : Form
     {
+<<<<<<< HEAD
         
         public Game()
         {
@@ -27,6 +28,28 @@ namespace minesweeper_xmas
 
                 }
             }
+=======
+        static int MINES, GAME_WIDTH, GAME_HEIGHT;
+
+        public Game(int iWidth, int iHeight, int iMines)
+        {
+            InitializeComponent();
+            MINES = iMines;
+            GAME_WIDTH = iWidth;
+            GAME_HEIGHT = iHeight;
+            Setup();
+        }
+
+        private void Setup()
+        {
+            this.BackColor = Color.FromArgb(192, 192, 192);
+
+        }
+        
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+>>>>>>> f6fd390ad4617c68fa4cfb566e9b3a43b11804e2
         }
     }
 }

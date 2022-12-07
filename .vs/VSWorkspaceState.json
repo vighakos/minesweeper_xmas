@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\minesweeper_xmas",
+    "\\minesweeper_xmas\\minesweeper_xmas"
   ],
+<<<<<<< HEAD
   "SelectedNode": "\\minesweeper_xmas.sln",
+=======
+>>>>>>> f6fd390ad4617c68fa4cfb566e9b3a43b11804e2
   "PreviewInSolutionExplorer": false
 }
