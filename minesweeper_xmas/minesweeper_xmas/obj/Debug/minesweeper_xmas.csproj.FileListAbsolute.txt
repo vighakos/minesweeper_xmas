@@ -28,3 +28,4 @@ D:\KI_Github\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesw
 D:\KI_Github\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.csproj.CoreCompileInputs.cache
 D:\KI_Github\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.exe
 D:\KI_Github\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.pdb
+H:\214szft\aszmo projektek\minesweeper\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.Form1.resources

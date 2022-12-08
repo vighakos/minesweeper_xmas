@@ -13,7 +13,8 @@ namespace minesweeper_xmas
     public partial class Game : Form
     {
         static int GAME_WIDTH, GAME_HEIGHT, MINES;
-        static Cella[,] cellak;
+        static Cella[,] cellak = new Cella[GAME_HEIGHT, GAME_WIDTH];
+        static int[,] mines = new int[GAME_HEIGHT, GAME_WIDTH];
         public Game(int width, int height, int mines)
         {
             InitializeComponent();
@@ -25,13 +26,12 @@ namespace minesweeper_xmas
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            
+            Application.Restart();
         }
 
         private void Setup()
         {
             this.BackColor = Color.FromArgb(192, 192, 192);
-            cellak = new Cella[GAME_HEIGHT, GAME_WIDTH];
 
             for (int i = 0; i < GAME_HEIGHT; i++)
             {
@@ -42,7 +42,7 @@ namespace minesweeper_xmas
                         Location = new Point(50 + j * 21, 90 + i * 21),
                         Size = new Size(20, 20),
                         Name = $"{i}_{j}",
-                        BackColor = Color.Gray,
+                        BackColor = Color.DarkGray,
                         SizeMode = PictureBoxSizeMode.CenterImage
                     };
                     cellak[i, j] = new Cella(i, j, false, uj);
