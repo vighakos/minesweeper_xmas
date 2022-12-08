@@ -133,7 +133,7 @@ namespace minesweeper_xmas
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(209, 235);
+            this.button1.Location = new System.Drawing.Point(227, 235);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 6;
@@ -189,6 +189,7 @@ namespace minesweeper_xmas
             this.MaximumSize = new System.Drawing.Size(612, 408);
             this.MinimumSize = new System.Drawing.Size(612, 408);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Santasweeper";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
