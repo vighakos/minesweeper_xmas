@@ -23,6 +23,11 @@ namespace minesweeper_xmas
             Setup();
         }
 
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         private void Setup()
         {
             this.BackColor = Color.FromArgb(192, 192, 192);
@@ -47,7 +52,7 @@ namespace minesweeper_xmas
             }
         }
         
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
 
         }
