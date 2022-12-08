@@ -29,10 +29,7 @@ namespace minesweeper_xmas
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
             this.SuspendLayout();
-            // 
-=======
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.szeles_lbl = new System.Windows.Forms.Label();
             this.magas_lbl = new System.Windows.Forms.Label();
@@ -101,19 +98,14 @@ namespace minesweeper_xmas
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size(59, 20);
             this.numericUpDown3.TabIndex = 5;
-            // 
->>>>>>> f6fd390ad4617c68fa4cfb566e9b3a43b11804e2
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
-=======
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(596, 369);
             this.Controls.Add(this.numericUpDown3);
             this.Controls.Add(this.numericUpDown2);
@@ -121,7 +113,6 @@ namespace minesweeper_xmas
             this.Controls.Add(this.bomba_lbl);
             this.Controls.Add(this.magas_lbl);
             this.Controls.Add(this.szeles_lbl);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(612, 408);
             this.MinimumSize = new System.Drawing.Size(612, 408);
             this.Name = "Form1";
@@ -131,8 +122,6 @@ namespace minesweeper_xmas
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
->>>>>>> f6fd390ad4617c68fa4cfb566e9b3a43b11804e2
-
         }
 
         #endregion
