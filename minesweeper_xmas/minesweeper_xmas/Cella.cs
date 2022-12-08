@@ -10,6 +10,7 @@ namespace minesweeper_xmas
 {
     class Cella
     {
+        //public Label Lbl;
         public PictureBox Pbox;
         public bool Revealed;
         public bool IsMine;
