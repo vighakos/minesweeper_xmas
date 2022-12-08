@@ -36,6 +36,9 @@ namespace minesweeper_xmas
         private void Timer1_Tick(object sender, EventArgs e)
         {
 
+            int mp = 0;
+            int perc = 0;
+            int ora = 0;
         }
     }
 }
