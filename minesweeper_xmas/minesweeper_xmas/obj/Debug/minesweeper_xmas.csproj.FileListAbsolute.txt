@@ -18,3 +18,4 @@ D:\214szft\xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.pdb
 D:\214szft\xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.Form1.resources
 H:\214szft\aszmo projektek\minesweeper\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.csprojAssemblyReference.cache
 H:\214szft\aszmo projektek\minesweeper\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.Game.resources
+H:\214szft\aszmo projektek\minesweeper\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.Form1.resources

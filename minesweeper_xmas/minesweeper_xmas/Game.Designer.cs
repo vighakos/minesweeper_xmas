@@ -38,9 +38,6 @@ namespace minesweeper_xmas
             this.mineCountLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // timer1
-            // 
-            // 
             // minLbl
             // 
             this.minLbl.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -96,7 +93,7 @@ namespace minesweeper_xmas
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(324, 450);
+            this.ClientSize = new System.Drawing.Size(910, 450);
             this.Controls.Add(this.mineCountLbl);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.secLbl);

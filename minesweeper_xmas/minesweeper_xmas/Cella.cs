@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace minesweeper_xmas
 {
@@ -11,14 +12,14 @@ namespace minesweeper_xmas
     {
         public PictureBox Pbox;
         public bool Revealed;
-        public bool Mine;
+        public bool IsMine;
         public int X, Y;
 
-        public Cella(int x, int y, bool mine)
+        public Cella(int x, int y, bool mine, PictureBox pbox)
         {
-            // TODO: Pbox
+            Pbox = pbox;
             Revealed = false;
-            Mine = mine;
+            IsMine = mine;
             X = x;
             Y = y;
         }
