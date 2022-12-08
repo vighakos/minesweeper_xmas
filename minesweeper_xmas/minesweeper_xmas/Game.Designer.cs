@@ -36,6 +36,10 @@ namespace minesweeper_xmas
             this.secLbl = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.mineCountLbl = new System.Windows.Forms.Label();
+            this.hLbl = new System.Windows.Forms.Label();
+            this.percLbl = new System.Windows.Forms.Label();
+            this.mpLbl = new System.Windows.Forms.Label();
+            this.tpLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // timer1
@@ -93,12 +97,52 @@ namespace minesweeper_xmas
             this.mineCountLbl.Text = "00";
             this.mineCountLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // hLbl
+            // 
+            this.hLbl.AutoSize = true;
+            this.hLbl.Location = new System.Drawing.Point(29, 315);
+            this.hLbl.Name = "hLbl";
+            this.hLbl.Size = new System.Drawing.Size(10, 13);
+            this.hLbl.TabIndex = 5;
+            this.hLbl.Text = ".";
+            // 
+            // percLbl
+            // 
+            this.percLbl.AutoSize = true;
+            this.percLbl.Location = new System.Drawing.Point(54, 315);
+            this.percLbl.Name = "percLbl";
+            this.percLbl.Size = new System.Drawing.Size(10, 13);
+            this.percLbl.TabIndex = 6;
+            this.percLbl.Text = ".";
+            // 
+            // mpLbl
+            // 
+            this.mpLbl.AutoSize = true;
+            this.mpLbl.Location = new System.Drawing.Point(81, 315);
+            this.mpLbl.Name = "mpLbl";
+            this.mpLbl.Size = new System.Drawing.Size(10, 13);
+            this.mpLbl.TabIndex = 7;
+            this.mpLbl.Text = ".";
+            // 
+            // tpLbl
+            // 
+            this.tpLbl.AutoSize = true;
+            this.tpLbl.Location = new System.Drawing.Point(107, 315);
+            this.tpLbl.Name = "tpLbl";
+            this.tpLbl.Size = new System.Drawing.Size(10, 13);
+            this.tpLbl.TabIndex = 8;
+            this.tpLbl.Text = ".";
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(910, 450);
+            this.Controls.Add(this.tpLbl);
+            this.Controls.Add(this.mpLbl);
+            this.Controls.Add(this.percLbl);
+            this.Controls.Add(this.hLbl);
             this.Controls.Add(this.mineCountLbl);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.secLbl);
@@ -107,6 +151,7 @@ namespace minesweeper_xmas
             this.Name = "Game";
             this.Text = "Game";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -118,5 +163,9 @@ namespace minesweeper_xmas
         private System.Windows.Forms.Label secLbl;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label mineCountLbl;
+        private System.Windows.Forms.Label hLbl;
+        private System.Windows.Forms.Label percLbl;
+        private System.Windows.Forms.Label mpLbl;
+        private System.Windows.Forms.Label tpLbl;
     }
 }

@@ -54,10 +54,33 @@ namespace minesweeper_xmas
         
         private void Timer1_Tick(object sender, EventArgs e)
         {
-
+            DateTime startTime = DateTime.Now;
+            int tp = 0;
             int mp = 0;
             int perc = 0;
             int ora = 0;
+            timer1.Start();
+            tp++;
+            for (int i = 0; i < ; i++)
+            {
+
+            }
+            if (tp == 1000)
+            {
+                tp = 0;
+                mp = 1;
+            }
+            if (mp == 60)
+            {
+                mp = 0;
+                perc = 1;
+            }
+            if (perc == 60)
+            {
+                perc = 0;
+                ora = 1;
+            }
+
         }
     }
 }
