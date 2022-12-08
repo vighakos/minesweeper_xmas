@@ -40,6 +40,7 @@ namespace minesweeper_xmas
             // 
             // timer1
             // 
+            this.timer1.Interval = 1000;
             // 
             // minLbl
             // 
@@ -80,6 +81,7 @@ namespace minesweeper_xmas
             this.button1.TabIndex = 3;
             this.button1.Text = "😎";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // mineCountLbl
             // 
