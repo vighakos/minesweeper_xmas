@@ -6,22 +6,35 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 
 namespace minesweeper_xmas
 {
     public partial class Game : Form
     {
+
+        int m, s;
         static int GAME_WIDTH, GAME_HEIGHT, MINES;
         static Cella[,] cellak;
         public Game(int width, int height, int mines)
         {
             InitializeComponent();
-
             GAME_WIDTH = width;
             GAME_HEIGHT = height;
             MINES = mines;
             Setup();
+        }
+
+        private void Game_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            timer1.Stop();
+            Application.Exit();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
         }
 
         private void Setup()
@@ -62,34 +75,13 @@ namespace minesweeper_xmas
                     this.Controls.Add(uj);
                 }
             }
+            timer1.Start();
         }
-        
-        private void Timer1_Tick(object sender, EventArgs e)
+        private void Game_FormClosing(object sender, FormClosingEventArgs e)
         {
-            int tp = 0;
-            int mp = 0;
-            int perc = 0;
-            int ora = 0;
-            tp++;
-
-            if (tp == 1000)
-            {
-                tp = 0;
-                mp = 1;
-            }
-            if (mp == 60)
-            {
-                mp = 0;
-                perc = 1;
-            }
-            if (perc == 60)
-            {
-                perc = 0;
-                ora = 1;
-            }
-
+            timer1.Stop();
+            Application.DoEvents();
         }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             Application.Restart();
