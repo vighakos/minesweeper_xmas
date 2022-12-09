@@ -10,17 +10,15 @@ namespace minesweeper_xmas
 {
     class Cella
     {
-        //public Label Lbl;
         public Label Lbl;
         public bool Revealed;
         public bool IsMine;
         public int X, Y;
 
-        public Cella(int x, int y, bool mine, Label lbl)
+        public Cella(int x, int y, Label lbl)
         {
             Lbl = lbl;
             Revealed = false;
-            IsMine = mine;
             X = x;
             Y = y;
         }

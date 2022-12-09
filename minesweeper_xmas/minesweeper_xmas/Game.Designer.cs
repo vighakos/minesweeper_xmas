@@ -89,10 +89,6 @@ namespace minesweeper_xmas
             this.secLbl.Text = "00";
             this.secLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,9 +101,9 @@ namespace minesweeper_xmas
             this.Controls.Add(this.kettospotty);
             this.Controls.Add(this.minLbl);
             this.Name = "Game";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Game_FormClosing_1);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Game_FormClosing);
             this.ResumeLayout(false);
 
         }
