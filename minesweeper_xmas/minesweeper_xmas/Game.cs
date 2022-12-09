@@ -54,7 +54,6 @@ namespace minesweeper_xmas
                         Location = new Point(30 + oszlop * 21, 70 + sor * 21),
                         Size = new Size(20, 20),
                         Name = $"{sor}_{oszlop}",
-                        Text = $"{sor}_{oszlop}",
                         BackColor = Color.DarkGray
                     };
                     cellak[sor, oszlop] = new Cella(sor, oszlop, false, uj);
