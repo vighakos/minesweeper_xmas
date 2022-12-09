@@ -13,51 +13,86 @@ namespace minesweeper_xmas
     public partial class Game : Form
     {
         static int GAME_WIDTH, GAME_HEIGHT, MINES;
-        static Cella[,] cellak = new Cella[GAME_HEIGHT, GAME_WIDTH];
-        static int[,] mines = new int[GAME_HEIGHT, GAME_WIDTH];
+        static Cella[,] cellak;
         public Game(int width, int height, int mines)
         {
             InitializeComponent();
-            MINES = mines;
+
             GAME_WIDTH = width;
             GAME_HEIGHT = height;
+            MINES = mines;
             Setup();
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            Application.Restart();
         }
 
         private void Setup()
         {
+            #region Form beállítás
+
             this.BackColor = Color.FromArgb(192, 192, 192);
+            this.Size = new Size(75 + GAME_WIDTH * 21, 150 + GAME_HEIGHT * 21);
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
 
-            for (int i = 0; i < GAME_HEIGHT; i++)
+            restartBtn.Location = new Point(GAME_WIDTH * 21 / 2 + 12, 15);
+            minLbl.Location = new Point(GAME_WIDTH * 21 - 30, 15);
+            kettospotty.Location = new Point(minLbl.Location.X + 30, 20);
+            secLbl.Location = new Point(minLbl.Location.X + 37, 15);
+
+            mineCountLbl.Text = MINES.ToString();
+
+            #endregion
+
+            cellak = new Cella[GAME_HEIGHT, GAME_WIDTH];
+
+            for (int sor = 0; sor < GAME_HEIGHT; sor++)
             {
-                for (int j = 0; j < GAME_WIDTH; j++)
+                for (int oszlop = 0; oszlop < GAME_WIDTH; oszlop++)
                 {
-                    PictureBox uj = new PictureBox()
+                    Label uj = new Label()
                     {
-                        Location = new Point(50 + j * 21, 90 + i * 21),
+                        Location = new Point(30 + oszlop * 21, 70 + sor * 21),
                         Size = new Size(20, 20),
-                        Name = $"{i}_{j}",
-                        BackColor = Color.DarkGray,
-                        SizeMode = PictureBoxSizeMode.CenterImage
+                        Name = $"{sor}_{oszlop}",
+                        Text = $"{sor}_{oszlop}",
+                        BackColor = Color.DarkGray
                     };
-                    cellak[i, j] = new Cella(i, j, false, uj);
+                    cellak[sor, oszlop] = new Cella(sor, oszlop, false, uj);
 
-                    Controls.Add(uj);
+                    this.Controls.Add(uj);
                 }
             }
         }
         
         private void Timer1_Tick(object sender, EventArgs e)
         {
-
+            int tp = 0;
             int mp = 0;
             int perc = 0;
             int ora = 0;
+            tp++;
+
+            if (tp == 1000)
+            {
+                tp = 0;
+                mp = 1;
+            }
+            if (mp == 60)
+            {
+                mp = 0;
+                perc = 1;
+            }
+            if (perc == 60)
+            {
+                perc = 0;
+                ora = 1;
+            }
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

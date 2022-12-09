@@ -11,14 +11,14 @@ namespace minesweeper_xmas
     class Cella
     {
         //public Label Lbl;
-        public PictureBox Pbox;
+        public Label Lbl;
         public bool Revealed;
         public bool IsMine;
         public int X, Y;
 
-        public Cella(int x, int y, bool mine, PictureBox pbox)
+        public Cella(int x, int y, bool mine, Label lbl)
         {
-            Pbox = pbox;
+            Lbl = lbl;
             Revealed = false;
             IsMine = mine;
             X = x;
