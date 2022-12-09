@@ -29,3 +29,14 @@ D:\KI_Github\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesw
 D:\KI_Github\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.exe
 D:\KI_Github\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.pdb
 H:\214szft\aszmo projektek\minesweeper\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.Form1.resources
+X:\a\suli\214szft\aszmo projektek\minesweeper\minesweeper_xmas\minesweeper_xmas\bin\Debug\minesweeper_xmas.exe.config
+X:\a\suli\214szft\aszmo projektek\minesweeper\minesweeper_xmas\minesweeper_xmas\bin\Debug\minesweeper_xmas.exe
+X:\a\suli\214szft\aszmo projektek\minesweeper\minesweeper_xmas\minesweeper_xmas\bin\Debug\minesweeper_xmas.pdb
+X:\a\suli\214szft\aszmo projektek\minesweeper\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.csprojAssemblyReference.cache
+X:\a\suli\214szft\aszmo projektek\minesweeper\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.Form1.resources
+X:\a\suli\214szft\aszmo projektek\minesweeper\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.Game.resources
+X:\a\suli\214szft\aszmo projektek\minesweeper\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.Properties.Resources.resources
+X:\a\suli\214szft\aszmo projektek\minesweeper\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.csproj.GenerateResource.cache
+X:\a\suli\214szft\aszmo projektek\minesweeper\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.csproj.CoreCompileInputs.cache
+X:\a\suli\214szft\aszmo projektek\minesweeper\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.exe
+X:\a\suli\214szft\aszmo projektek\minesweeper\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.pdb
