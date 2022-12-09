@@ -21,12 +21,21 @@ namespace minesweeper_xmas
         public int[,] GenerateBoard()
         {
             Map = new int[Height, Width];
-
-            for (int sor = 0; sor < Height; sor++)
+            Random random = new Random();
+            for (int i = 0; i < Mines; i++)
             {
-                for (int oszlop = 0; oszlop < Width; oszlop++)
+                bool rakott = false;
+
+                while (!rakott)
                 {
-                    // TODO: pálya generálás adott számó aknával
+                    int sor = random.Next(0, Height);
+                    int oszlop = random.Next(0, Width);
+
+                    if (Map[sor, oszlop] != 1)
+                    {
+                        Map[sor, oszlop] = 1;
+                        rakott = true;
+                    }
                 }
             }
 
@@ -35,11 +44,20 @@ namespace minesweeper_xmas
 
         public int GetMines(int koord_x, int koord_y)
         {
-            int count = 0;
+            List<int> aknak = new List<int>();
 
-            // TODO: visszaadja hány aknát érint a cella
+            for (int sor = koord_x - 1; sor < koord_x + 1; sor++)
+            {
+                for (int oszlop = koord_y - 1; oszlop < koord_y + 1; oszlop++)
+                {
+                    if (sor < Width && sor > -1 && oszlop < Height && oszlop > -1)
+                    {
+                        aknak.Add(Map[sor, oszlop]);
+                    }
+                }
+            }
 
-            return count;
+            return aknak.Where(x => x == 1).Count();
         }
     }
 }

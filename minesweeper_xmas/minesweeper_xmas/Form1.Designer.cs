@@ -32,16 +32,16 @@ namespace minesweeper_xmas
             this.szeles_lbl = new System.Windows.Forms.Label();
             this.magas_lbl = new System.Windows.Forms.Label();
             this.bomba_lbl = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.widthNum = new System.Windows.Forms.NumericUpDown();
+            this.heightNum = new System.Windows.Forms.NumericUpDown();
+            this.mineNum = new System.Windows.Forms.NumericUpDown();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.widthNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heightNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mineNum)).BeginInit();
             this.SuspendLayout();
             // 
             // szeles_lbl
@@ -80,52 +80,52 @@ namespace minesweeper_xmas
             this.bomba_lbl.TabIndex = 2;
             this.bomba_lbl.Text = "Télapók száma: ";
             // 
-            // numericUpDown1
+            // widthNum
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(288, 121);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.widthNum.Location = new System.Drawing.Point(288, 121);
+            this.widthNum.Minimum = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(95, 20);
-            this.numericUpDown1.TabIndex = 3;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(288, 95);
-            this.numericUpDown2.Minimum = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(95, 20);
-            this.numericUpDown2.TabIndex = 4;
-            this.numericUpDown2.Value = new decimal(new int[] {
+            this.widthNum.Name = "widthNum";
+            this.widthNum.Size = new System.Drawing.Size(95, 20);
+            this.widthNum.TabIndex = 3;
+            this.widthNum.Value = new decimal(new int[] {
             8,
             0,
             0,
             0});
             // 
-            // numericUpDown3
+            // heightNum
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(288, 147);
-            this.numericUpDown3.Minimum = new decimal(new int[] {
+            this.heightNum.Location = new System.Drawing.Point(288, 95);
+            this.heightNum.Minimum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.heightNum.Name = "heightNum";
+            this.heightNum.Size = new System.Drawing.Size(95, 20);
+            this.heightNum.TabIndex = 4;
+            this.heightNum.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            // 
+            // mineNum
+            // 
+            this.mineNum.Location = new System.Drawing.Point(288, 147);
+            this.mineNum.Minimum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(95, 20);
-            this.numericUpDown3.TabIndex = 5;
-            this.numericUpDown3.Value = new decimal(new int[] {
+            this.mineNum.Name = "mineNum";
+            this.mineNum.Size = new System.Drawing.Size(95, 20);
+            this.mineNum.TabIndex = 5;
+            this.mineNum.Value = new decimal(new int[] {
             10,
             0,
             0,
@@ -180,9 +180,9 @@ namespace minesweeper_xmas
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.numericUpDown3);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.mineNum);
+            this.Controls.Add(this.heightNum);
+            this.Controls.Add(this.widthNum);
             this.Controls.Add(this.bomba_lbl);
             this.Controls.Add(this.magas_lbl);
             this.Controls.Add(this.szeles_lbl);
@@ -191,9 +191,9 @@ namespace minesweeper_xmas
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Santasweeper";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.widthNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heightNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mineNum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,9 +204,9 @@ namespace minesweeper_xmas
         private System.Windows.Forms.Label szeles_lbl;
         private System.Windows.Forms.Label magas_lbl;
         private System.Windows.Forms.Label bomba_lbl;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown widthNum;
+        private System.Windows.Forms.NumericUpDown heightNum;
+        private System.Windows.Forms.NumericUpDown mineNum;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;

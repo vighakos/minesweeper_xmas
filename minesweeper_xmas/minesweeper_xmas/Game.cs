@@ -14,6 +14,8 @@ namespace minesweeper_xmas
     {
         static int GAME_WIDTH, GAME_HEIGHT, MINES;
         static Cella[,] cellak;
+        static Board board;
+        static int[,] map;
         public Game(int width, int height, int mines)
         {
             InitializeComponent();
@@ -26,8 +28,34 @@ namespace minesweeper_xmas
 
         private void Setup()
         {
-            #region Form beállítás
+            FormSetup();
 
+            board = new Board(GAME_HEIGHT, GAME_WIDTH, MINES);
+            map = board.GenerateBoard();
+            cellak = new Cella[GAME_HEIGHT, GAME_WIDTH];
+
+            for (int sor = 0; sor < GAME_HEIGHT; sor++)
+            {
+                for (int oszlop = 0; oszlop < GAME_WIDTH; oszlop++)
+                {
+                    int minecount = board.GetMines(sor, oszlop);
+                    Label uj = new Label()
+                    {
+                        Location = new Point(30 + oszlop * 21, 70 + sor * 21),
+                        Size = new Size(20, 20),
+                        Name = $"{sor}_{oszlop}",
+                        Text = board.Map[oszlop, sor].ToString(),
+                        BackColor = Color.DarkGray
+                    };
+                    cellak[sor, oszlop] = new Cella(sor, oszlop, board.Map[sor, oszlop] == 1, uj);
+                    uj.Click += new EventHandler(Lbl_Click);
+                    this.Controls.Add(uj);
+                }
+            }
+        }
+
+        private void FormSetup()
+        {
             this.BackColor = Color.FromArgb(192, 192, 192);
             this.Size = new Size(75 + GAME_WIDTH * 21, 150 + GAME_HEIGHT * 21);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -40,30 +68,19 @@ namespace minesweeper_xmas
             secLbl.Location = new Point(minLbl.Location.X + 37, 15);
 
             mineCountLbl.Text = MINES.ToString();
-
-            #endregion
-
-            cellak = new Cella[GAME_HEIGHT, GAME_WIDTH];
-
-            for (int sor = 0; sor < GAME_HEIGHT; sor++)
-            {
-                for (int oszlop = 0; oszlop < GAME_WIDTH; oszlop++)
-                {
-                    Label uj = new Label()
-                    {
-                        Location = new Point(30 + oszlop * 21, 70 + sor * 21),
-                        Size = new Size(20, 20),
-                        Name = $"{sor}_{oszlop}",
-                        Text = $"{sor}_{oszlop}",
-                        BackColor = Color.DarkGray
-                    };
-                    cellak[sor, oszlop] = new Cella(sor, oszlop, false, uj);
-
-                    this.Controls.Add(uj);
-                }
-            }
         }
-        
+
+        private void Lbl_Click(object sender, EventArgs e)
+        {
+            Label item = (Label)sender;
+            int koord_x = Convert.ToInt32(item.Name.Split('_')[0]);
+            int koord_y = Convert.ToInt32(item.Name.Split('_')[1]);
+
+            if (cellak[koord_x, koord_y].IsMine) return;
+
+            item.Text = board.GetMines(koord_x, koord_y).ToString();
+        }
+
         private void Timer1_Tick(object sender, EventArgs e)
         {
             int tp = 0;
