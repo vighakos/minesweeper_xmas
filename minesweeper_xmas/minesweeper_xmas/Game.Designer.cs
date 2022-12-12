@@ -41,7 +41,7 @@ namespace minesweeper_xmas
             // restartBtn
             // 
             this.restartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.restartBtn.Location = new System.Drawing.Point(90, 15);
+            this.restartBtn.Location = new System.Drawing.Point(94, 14);
             this.restartBtn.Name = "restartBtn";
             this.restartBtn.Size = new System.Drawing.Size(36, 36);
             this.restartBtn.TabIndex = 3;
