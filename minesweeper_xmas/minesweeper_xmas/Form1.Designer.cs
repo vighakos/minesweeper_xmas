@@ -49,7 +49,7 @@ namespace minesweeper_xmas
             this.szeles_lbl.AutoSize = true;
             this.szeles_lbl.BackColor = System.Drawing.Color.Transparent;
             this.szeles_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.szeles_lbl.ForeColor = System.Drawing.Color.White;
+            this.szeles_lbl.ForeColor = System.Drawing.Color.Black;
             this.szeles_lbl.Location = new System.Drawing.Point(142, 122);
             this.szeles_lbl.Name = "szeles_lbl";
             this.szeles_lbl.Size = new System.Drawing.Size(139, 20);
@@ -61,7 +61,7 @@ namespace minesweeper_xmas
             this.magas_lbl.AutoSize = true;
             this.magas_lbl.BackColor = System.Drawing.Color.Transparent;
             this.magas_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.magas_lbl.ForeColor = System.Drawing.Color.White;
+            this.magas_lbl.ForeColor = System.Drawing.Color.Black;
             this.magas_lbl.Location = new System.Drawing.Point(142, 95);
             this.magas_lbl.Name = "magas_lbl";
             this.magas_lbl.Size = new System.Drawing.Size(142, 20);
@@ -73,7 +73,7 @@ namespace minesweeper_xmas
             this.bomba_lbl.AutoSize = true;
             this.bomba_lbl.BackColor = System.Drawing.Color.Transparent;
             this.bomba_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bomba_lbl.ForeColor = System.Drawing.Color.White;
+            this.bomba_lbl.ForeColor = System.Drawing.Color.Black;
             this.bomba_lbl.Location = new System.Drawing.Point(142, 147);
             this.bomba_lbl.Name = "bomba_lbl";
             this.bomba_lbl.Size = new System.Drawing.Size(124, 20);
@@ -92,7 +92,7 @@ namespace minesweeper_xmas
             this.widthNum.Size = new System.Drawing.Size(95, 20);
             this.widthNum.TabIndex = 3;
             this.widthNum.Value = new decimal(new int[] {
-            8,
+            30,
             0,
             0,
             0});
@@ -109,7 +109,7 @@ namespace minesweeper_xmas
             this.heightNum.Size = new System.Drawing.Size(95, 20);
             this.heightNum.TabIndex = 4;
             this.heightNum.Value = new decimal(new int[] {
-            8,
+            30,
             0,
             0,
             0});
@@ -117,6 +117,11 @@ namespace minesweeper_xmas
             // mineNum
             // 
             this.mineNum.Location = new System.Drawing.Point(288, 147);
+            this.mineNum.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.mineNum.Minimum = new decimal(new int[] {
             10,
             0,
@@ -126,18 +131,18 @@ namespace minesweeper_xmas
             this.mineNum.Size = new System.Drawing.Size(95, 20);
             this.mineNum.TabIndex = 5;
             this.mineNum.Value = new decimal(new int[] {
-            10,
+            150,
             0,
             0,
             0});
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(227, 235);
+            this.button1.Location = new System.Drawing.Point(208, 220);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(113, 52);
             this.button1.TabIndex = 6;
-            this.button1.Text = "Játék";
+            this.button1.Text = "Custom";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -147,7 +152,7 @@ namespace minesweeper_xmas
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 7;
-            this.button2.Text = "Könnyű";
+            this.button2.Text = "Beginner";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -157,7 +162,7 @@ namespace minesweeper_xmas
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 8;
-            this.button3.Text = "Közepes";
+            this.button3.Text = "Intermediate";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -167,7 +172,7 @@ namespace minesweeper_xmas
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 9;
-            this.button4.Text = "Nehéz";
+            this.button4.Text = "Expert";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
