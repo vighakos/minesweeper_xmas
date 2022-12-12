@@ -59,7 +59,6 @@ namespace minesweeper_xmas
             Size size = new Size(20, 20);
 
             for (int sor = 0; sor < GAME_HEIGHT; sor++)
-            {
                 for (int oszlop = 0; oszlop < GAME_WIDTH; oszlop++)
                 {
                     Label uj = new Label()
@@ -76,14 +75,17 @@ namespace minesweeper_xmas
                     uj.Click += new EventHandler(Lbl_Click);
                     this.Controls.Add(uj);
                 }
-            }
         }
 
         private void Lbl_Click(object sender, EventArgs e)
         {
+            MouseEventArgs mousevent = (MouseEventArgs)e;
+
             Label item = (Label)sender;
             int koord_x = Convert.ToInt32(item.Name.Split('_')[0]);
             int koord_y = Convert.ToInt32(item.Name.Split('_')[1]);
+
+            Cella cella = cellak[koord_x, koord_y];
 
             if (board.Map == null)
             {
@@ -97,15 +99,81 @@ namespace minesweeper_xmas
                     }
             }
 
-            if (cellak[koord_x, koord_y].IsMine)
+            switch (mousevent.Button)
             {
-                item.BackColor = Color.Red;
+                case MouseButtons.Left:
+                    {
+                        if (cella.Flagged || cella.Revealed) return;
+                        if (cella.IsMine)
+                        {
+                            //TODO: összes akna mutatása vesztésnél
+                            item.BackColor = Color.Red;
+                            item.Text = "💣";
+                            Lose();
+                        }
+
+                        int count = board.GetMines(koord_x, koord_y);
+                        item.BackColor = Color.White;
+                        item.Text = count == 0 ? "" : count.ToString();
+                        cella.Revealed = true;
+
+                        if (count == 0) RevealTiles(koord_x, koord_y);
+
+                        break;
+                    }
+                case MouseButtons.Right:
+                    {
+                        /*
+                         * 0: nincs akna, nincs zászlózva
+                         * 1: akna van, nincs zászlózva
+                         * 2: akna van, zászlózva van
+                         * 3: nincs akna, zászlózva van
+                        */
+
+                        if (cella.Revealed) return;
+                        if (!cella.Flagged)
+                        {
+                            board.Map[koord_x, koord_y] = board.Map[koord_x, koord_y] == 1 ? 2 : 3;
+                            cella.Flagged = true;
+                            item.Text = "⚑";
+                        }
+                        else
+                        {
+                            board.Map[koord_x, koord_y] = board.Map[koord_x, koord_y] == 2 ? 1 : 0;
+                            cella.Flagged = false;
+                            item.Text = "";
+                        }
+                        break;
+                    }
+                default:
+                    break;
+            }
+        }
+
+        private void RevealTiles(int x, int y)
+        {
+            Cella cella = cellak[x, y];
+            if (x < 0 || x > GAME_HEIGHT || y < 0 || y > GAME_WIDTH || cella.Revealed) return;
+
+            if (cella.IsMine && !cella.Flagged)
+            {
+                cella.Lbl.BackColor = Color.Red;
+                cella.Lbl.Text = "¤";
                 Lose();
             }
 
-            item.BackColor = Color.White;
-            int count = board.GetMines(koord_x, koord_y);
-            item.Text = count == 0 ? "" : count.ToString();
+            int count = board.GetMines(x, y);
+            cella.Revealed = true;
+            cella.Lbl.BackColor = Color.White;
+            cella.Lbl.Text = count == 0 ? "" : count.ToString();
+
+            if (count == 0)
+            {
+                RevealTiles(x, y + 1);
+                RevealTiles(x, y - 1);
+                RevealTiles(x + 1, y);
+                RevealTiles(x - 1, y);
+            }
         }
 
         private void Lose()
@@ -135,7 +203,7 @@ namespace minesweeper_xmas
 
         }
 
-        private void Button1_Click(object sender, EventArgs e) { timer1.Stop(); Application.Restart();  }
+        private void Button1_Click(object sender, EventArgs e) { timer1.Stop(); Application.Restart(); }
 
         private void Game_FormClosing(object sender, FormClosingEventArgs e) { timer1.Stop(); Application.Exit(); }
     }

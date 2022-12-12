@@ -11,8 +11,7 @@ namespace minesweeper_xmas
     class Cella
     {
         public Label Lbl;
-        public bool Revealed;
-        public bool IsMine;
+        public bool Revealed, IsMine, Flagged;
         public int X, Y;
 
         public Cella(int x, int y, Label lbl)
@@ -21,6 +20,8 @@ namespace minesweeper_xmas
             Revealed = false;
             X = x;
             Y = y;
+            IsMine = false;
+            Flagged = false;
         }
     }
 }

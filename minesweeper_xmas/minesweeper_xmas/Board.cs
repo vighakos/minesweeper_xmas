@@ -49,7 +49,6 @@ namespace minesweeper_xmas
             int count = 0;
 
             for (int sor = koord_x - 1; sor < koord_x + 2; sor++)
-            {
                 for (int oszlop = koord_y - 1; oszlop < koord_y + 2; oszlop++)
                 {
                     if (sor == koord_x && oszlop == koord_y) continue;
@@ -58,7 +57,6 @@ namespace minesweeper_xmas
 
                     if (Map[sor, oszlop] == 1) count++;
                 }
-            }
 
             return count;
         }
