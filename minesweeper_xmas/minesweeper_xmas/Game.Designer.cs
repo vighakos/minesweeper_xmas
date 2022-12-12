@@ -41,7 +41,7 @@ namespace minesweeper_xmas
             // restartBtn
             // 
             this.restartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.restartBtn.Location = new System.Drawing.Point(90, 15);
+            this.restartBtn.Location = new System.Drawing.Point(94, 14);
             this.restartBtn.Name = "restartBtn";
             this.restartBtn.Size = new System.Drawing.Size(36, 36);
             this.restartBtn.TabIndex = 3;
@@ -89,6 +89,11 @@ namespace minesweeper_xmas
             this.secLbl.Text = "00";
             this.secLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -104,6 +109,7 @@ namespace minesweeper_xmas
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Game_FormClosing);
+            this.Load += new System.EventHandler(this.Game_Load);
             this.ResumeLayout(false);
 
         }
