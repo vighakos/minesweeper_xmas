@@ -12,6 +12,7 @@ namespace minesweeper_xmas
 {
     public partial class Game : Form
     {
+        int m, s;
         static int GAME_WIDTH, GAME_HEIGHT, MINES;
         static Cella[,] cellak;
         static Board board;
@@ -111,34 +112,30 @@ namespace minesweeper_xmas
             else Application.Exit();
         }
 
-        private void Timer1_Tick(object sender, EventArgs e)
+        private void Game_Load(object sender, EventArgs e)
         {
-            int tp = 0;
-            int mp = 0;
-            int perc = 0;
-            int ora = 0;
-            tp++;
-
-            if (tp == 1000)
-            {
-                tp = 0;
-                mp = 1;
-            }
-            if (mp == 60)
-            {
-                mp = 0;
-                perc = 1;
-            }
-            if (perc == 60)
-            {
-                perc = 0;
-                ora = 1;
-            }
-
+            timer1.Interval = 100;
+            timer1.Start();
         }
 
-        private void Button1_Click(object sender, EventArgs e) { Application.Restart(); }
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            Invoke(new Action(() =>
+            {
+                s += 1;
+                if (s == 60)
+                {
+                    s = 0;
+                    m += 1;
+                }
+            }
+            ));
+            minLbl.Text = m.ToString();
+            secLbl.Text = s.ToString();
+        }
 
-        private void Game_FormClosing(object sender, FormClosingEventArgs e) { Application.Exit(); }
+        private void Button1_Click(object sender, EventArgs e) { timer1.Stop(); Application.Restart();  }
+
+        private void Game_FormClosing(object sender, FormClosingEventArgs e) { timer1.Stop(); Application.Exit(); }
     }
 }

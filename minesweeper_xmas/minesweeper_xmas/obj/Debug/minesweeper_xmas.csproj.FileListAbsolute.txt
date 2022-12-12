@@ -41,3 +41,14 @@ X:\a\suli\214szft\aszmo projektek\minesweeper\minesweeper_xmas\minesweeper_xmas\
 X:\a\suli\214szft\aszmo projektek\minesweeper\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.exe
 X:\a\suli\214szft\aszmo projektek\minesweeper\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.pdb
 D:\KI_Github\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.Form1.resources
+C:\Users\imker\OneDrive\Asztali gép\Github\Repok\vighakos\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\bin\Debug\minesweeper_xmas.exe.config
+C:\Users\imker\OneDrive\Asztali gép\Github\Repok\vighakos\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\bin\Debug\minesweeper_xmas.exe
+C:\Users\imker\OneDrive\Asztali gép\Github\Repok\vighakos\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\bin\Debug\minesweeper_xmas.pdb
+C:\Users\imker\OneDrive\Asztali gép\Github\Repok\vighakos\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.csproj.AssemblyReference.cache
+C:\Users\imker\OneDrive\Asztali gép\Github\Repok\vighakos\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.Form1.resources
+C:\Users\imker\OneDrive\Asztali gép\Github\Repok\vighakos\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.Game.resources
+C:\Users\imker\OneDrive\Asztali gép\Github\Repok\vighakos\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.Properties.Resources.resources
+C:\Users\imker\OneDrive\Asztali gép\Github\Repok\vighakos\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.csproj.GenerateResource.cache
+C:\Users\imker\OneDrive\Asztali gép\Github\Repok\vighakos\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.csproj.CoreCompileInputs.cache
+C:\Users\imker\OneDrive\Asztali gép\Github\Repok\vighakos\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.exe
+C:\Users\imker\OneDrive\Asztali gép\Github\Repok\vighakos\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.pdb
