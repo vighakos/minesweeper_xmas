@@ -106,7 +106,7 @@ namespace minesweeper_xmas
                         {
                             //TODO: összes akna mutatása vesztésnél
                             item.BackColor = Color.Red;
-                            item.Text = "¤";
+                            item.Text = "💣";
                             Lose();
                         }
 
@@ -115,11 +115,7 @@ namespace minesweeper_xmas
                         item.Text = count == 0 ? "" : count.ToString();
                         cella.Revealed = true;
 
-                        if (count == 0)
-                        {
-                            //TODO: érintekző üres cellák kipattintása
-
-                        }
+                        if (count == 0) RevealTiles(koord_x, koord_y);
 
                         break;
                     }
@@ -137,18 +133,44 @@ namespace minesweeper_xmas
                         {
                             board.Map[koord_x, koord_y] = board.Map[koord_x, koord_y] == 1 ? 2 : 3;
                             cella.Flagged = true;
-                            item.Text = $"⚑";
+                            item.Text = "⚑";
                         }
                         else
                         {
                             board.Map[koord_x, koord_y] = board.Map[koord_x, koord_y] == 2 ? 1 : 0;
                             cella.Flagged = false;
-                            item.Text = $"";
+                            item.Text = "";
                         }
                         break;
                     }
                 default:
                     break;
+            }
+        }
+
+        private void RevealTiles(int x, int y)
+        {
+            Cella cella = cellak[x, y];
+            if (x < 0 || x > GAME_HEIGHT || y < 0 || y > GAME_WIDTH || cella.Revealed) return;
+
+            if (cella.IsMine && !cella.Flagged)
+            {
+                cella.Lbl.BackColor = Color.Red;
+                cella.Lbl.Text = "¤";
+                Lose();
+            }
+
+            int count = board.GetMines(x, y);
+            cella.Revealed = true;
+            cella.Lbl.BackColor = Color.White;
+            cella.Lbl.Text = count == 0 ? "" : count.ToString();
+
+            if (count == 0)
+            {
+                RevealTiles(x, y + 1);
+                RevealTiles(x, y - 1);
+                RevealTiles(x + 1, y);
+                RevealTiles(x - 1, y);
             }
         }
 
