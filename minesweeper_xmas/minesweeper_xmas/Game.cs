@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Timers;
 
 namespace minesweeper_xmas
 {
@@ -24,6 +25,7 @@ namespace minesweeper_xmas
             GAME_HEIGHT = height;
             MINES = mines;
             Setup();
+           
         }
 
         private void Setup()
@@ -114,24 +116,23 @@ namespace minesweeper_xmas
 
         private void Game_Load(object sender, EventArgs e)
         {
-            timer1.Interval = 100;
             timer1.Start();
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            Invoke(new Action(() =>
+            s = 0;
+            m = 0;
+
+            s += 1;
+            if (s == 60 )
             {
-                s += 1;
-                if (s == 60)
-                {
-                    s = 0;
-                    m += 1;
-                }
+                s = 0;
+                m += 1;
             }
-            ));
-            minLbl.Text = m.ToString();
-            secLbl.Text = s.ToString();
+            minLbl.Text = string.Format("{0}", m.ToString().PadLeft(2, '0'));
+            secLbl.Text = string.Format("{0}", m.ToString().PadLeft(2, '0'));
+
         }
 
         private void Button1_Click(object sender, EventArgs e) { timer1.Stop(); Application.Restart();  }
