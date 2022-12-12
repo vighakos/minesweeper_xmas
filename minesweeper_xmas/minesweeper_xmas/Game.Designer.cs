@@ -30,17 +30,34 @@ namespace minesweeper_xmas
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.restartBtn = new System.Windows.Forms.Button();
+            this.mineCountLbl = new System.Windows.Forms.Label();
             this.minLbl = new System.Windows.Forms.Label();
             this.kettospotty = new System.Windows.Forms.Label();
             this.secLbl = new System.Windows.Forms.Label();
-            this.restartBtn = new System.Windows.Forms.Button();
-            this.mineCountLbl = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // timer1
+            // restartBtn
             // 
-            this.timer1.Interval = 1000;
+            this.restartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.restartBtn.Location = new System.Drawing.Point(90, 15);
+            this.restartBtn.Name = "restartBtn";
+            this.restartBtn.Size = new System.Drawing.Size(36, 36);
+            this.restartBtn.TabIndex = 3;
+            this.restartBtn.Text = "😎";
+            this.restartBtn.UseVisualStyleBackColor = true;
+            this.restartBtn.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // mineCountLbl
+            // 
+            this.mineCountLbl.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.mineCountLbl.Location = new System.Drawing.Point(30, 15);
+            this.mineCountLbl.Name = "mineCountLbl";
+            this.mineCountLbl.Size = new System.Drawing.Size(35, 35);
+            this.mineCountLbl.TabIndex = 4;
+            this.mineCountLbl.Text = "00";
+            this.mineCountLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // minLbl
             // 
@@ -72,27 +89,6 @@ namespace minesweeper_xmas
             this.secLbl.Text = "00";
             this.secLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // restartBtn
-            // 
-            this.restartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.restartBtn.Location = new System.Drawing.Point(90, 15);
-            this.restartBtn.Name = "restartBtn";
-            this.restartBtn.Size = new System.Drawing.Size(36, 36);
-            this.restartBtn.TabIndex = 3;
-            this.restartBtn.Text = "😎";
-            this.restartBtn.UseVisualStyleBackColor = true;
-            this.restartBtn.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // mineCountLbl
-            // 
-            this.mineCountLbl.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.mineCountLbl.Location = new System.Drawing.Point(30, 15);
-            this.mineCountLbl.Name = "mineCountLbl";
-            this.mineCountLbl.Size = new System.Drawing.Size(35, 35);
-            this.mineCountLbl.TabIndex = 4;
-            this.mineCountLbl.Text = "00";
-            this.mineCountLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,19 +101,20 @@ namespace minesweeper_xmas
             this.Controls.Add(this.kettospotty);
             this.Controls.Add(this.minLbl);
             this.Name = "Game";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Game_FormClosing);
+            this.Load += new System.EventHandler(this.Game_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button restartBtn;
+        private System.Windows.Forms.Label mineCountLbl;
         private System.Windows.Forms.Label minLbl;
         private System.Windows.Forms.Label kettospotty;
         private System.Windows.Forms.Label secLbl;
-        private System.Windows.Forms.Button restartBtn;
-        private System.Windows.Forms.Label mineCountLbl;
+        private System.Windows.Forms.Timer timer1;
     }
 }

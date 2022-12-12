@@ -19,13 +19,12 @@ namespace minesweeper_xmas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            this.Hide();
             if (mineNum.Value > widthNum.Value * heightNum.Value)
             {
                 mineNum.Value = Convert.ToInt32(widthNum.Value * heightNum.Value / 4);
             }
-            new Game(Convert.ToInt32(widthNum.Value), Convert.ToInt32(heightNum.Value), Convert.ToInt32(mineNum.Value)).ShowDialog();
-            Close();
+            new Game(Convert.ToInt32(widthNum.Value), Convert.ToInt32(heightNum.Value), Convert.ToInt32(mineNum.Value)).Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
