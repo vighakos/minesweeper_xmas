@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Timers;
 
 namespace minesweeper_xmas
 {
@@ -93,29 +94,27 @@ namespace minesweeper_xmas
                     for (int oszlop = 0; oszlop < GAME_WIDTH; oszlop++)
                     {
                         cellak[sor, oszlop].IsMine = board.Map[sor, oszlop] == 1;
-                        if (cellak[sor, oszlop].IsMine) cellak[sor, oszlop].Lbl.BackColor = Color.Red;
+                        //if (cellak[sor, oszlop].IsMine) cellak[sor, oszlop].Lbl.BackColor = Color.Red;
                     }
             }
+
+            int count = board.GetMines(koord_x, koord_y);
 
             switch (mousevent.Button)
             {
                 case MouseButtons.Left:
                     {
-                        if (cella.Flagged || cella.Revealed) return;
-                        if (cella.IsMine)
-                        {
-                            //TODO: összes akna mutatása vesztésnél
-                            item.BackColor = Color.Red;
-                            item.Text = "💣";
-                            Lose();
-                        }
-
-                        int count = board.GetMines(koord_x, koord_y);
-                        item.BackColor = Color.White;
-                        item.Text = count == 0 ? "" : count.ToString();
-                        cella.Revealed = true;
+                        if (cella.Flagged) return;
+                        if (cella.IsMine) Lose(koord_x, koord_y);
 
                         if (count == 0) RevealTiles(koord_x, koord_y);
+                        else if (cella.Revealed) Chord(koord_x, koord_y);
+                        else
+                        {
+                            cella.Revealed = true;
+                            cella.Lbl.BackColor = Color.White;
+                            cella.Lbl.Text = count == 0 ? "" : count.ToString();
+                        }
 
                         break;
                     }
@@ -146,60 +145,116 @@ namespace minesweeper_xmas
                 default:
                     break;
             }
+
+            WinCheck();
+        }
+
+        private void Chord(int x, int y)
+        {
+            if (board.GetMines(x, y) == board.GetFlags(x, y))
+            {
+                RevealTiles(x, y - 1);
+                RevealTiles(x, y + 1);
+                RevealTiles(x - 1, y);
+                RevealTiles(x + 1, y);
+                RevealTiles(x - 1, y + 1);
+                RevealTiles(x - 1, y - 1);
+                RevealTiles(x + 1, y + 1);
+                RevealTiles(x + 1, y - 1);
+            }
         }
 
         private void RevealTiles(int x, int y)
         {
+            if (x < 0 || x >= GAME_HEIGHT || y < 0 || y >= GAME_WIDTH) return;
             Cella cella = cellak[x, y];
-            if (x < 0 || x > GAME_HEIGHT || y < 0 || y > GAME_WIDTH || cella.Revealed) return;
 
-            if (cella.IsMine && !cella.Flagged)
-            {
-                cella.Lbl.BackColor = Color.Red;
-                cella.Lbl.Text = "¤";
-                Lose();
-            }
+            if (cella.Revealed || cella.Flagged) return;
 
             int count = board.GetMines(x, y);
+
             cella.Revealed = true;
             cella.Lbl.BackColor = Color.White;
             cella.Lbl.Text = count == 0 ? "" : count.ToString();
 
             if (count == 0)
             {
-                RevealTiles(x, y + 1);
                 RevealTiles(x, y - 1);
-                RevealTiles(x + 1, y);
+                RevealTiles(x, y + 1);
                 RevealTiles(x - 1, y);
+                RevealTiles(x + 1, y);
+                RevealTiles(x - 1, y + 1);
+                RevealTiles(x - 1, y - 1);
+                RevealTiles(x + 1, y + 1);
+                RevealTiles(x + 1, y - 1);
             }
         }
 
-        private void Lose()
+        private void WinCheck()
         {
-            if (MessageBox.Show("Szeretnél újat kezdeni?", "Vesztettél", MessageBoxButtons.YesNo) == DialogResult.Yes) Application.Restart();
-            else Application.Exit();
+            int count = 0;
+            for (int sor = 0; sor < GAME_HEIGHT; sor++)
+            {
+                for (int oszlop = 0; oszlop < GAME_WIDTH; oszlop++)
+                {
+                    if (board.Map[sor, oszlop] == 2) count++;
+                }
+            }
+
+            if (count == MINES)
+            {
+                if (MessageBox.Show("Szeretnél újat játszani?", "Nyertél", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    Application.Restart();
+                else
+                    Application.Exit();
+            }
+        }
+
+        private void Lose(int x, int y)
+        {
+            for (int sor = 0; sor < GAME_HEIGHT; sor++)
+                for (int oszlop = 0; oszlop < GAME_WIDTH; oszlop++)
+                {
+                    if (sor == x && oszlop == y)
+                    {
+                        cellak[sor, oszlop].Lbl.BackColor = Color.Red;
+                        cellak[sor, oszlop].Lbl.Text = "💣";
+                        continue;
+                    }
+                    if (board.Map[sor, oszlop] == 1)
+                    {
+                        cellak[sor, oszlop].Lbl.BackColor = Color.White;
+                        cellak[sor, oszlop].Lbl.Text = "💣";
+                    }
+                    else if (board.Map[sor, oszlop] == 2) cellak[sor, oszlop].Lbl.BackColor = Color.Green;
+                    else if (board.Map[sor, oszlop] == 3) cellak[sor, oszlop].Lbl.BackColor = Color.LightCoral;
+                }
+
+            if (MessageBox.Show("Szeretnél újat kezdeni?", "Vesztettél", MessageBoxButtons.YesNo) == DialogResult.Yes) 
+                Application.Restart();
+            else 
+                Application.Exit();
         }
 
         private void Game_Load(object sender, EventArgs e)
         {
-            timer1.Interval = 100;
             timer1.Start();
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            Invoke(new Action(() =>
+            s = 0;
+            m = 0;
+
+            s += 1;
+            if (s == 60 )
             {
-                s += 1;
-                if (s == 60)
-                {
-                    s = 0;
-                    m += 1;
-                }
+                s = 0;
+                m += 1;
             }
-            ));
-            minLbl.Text = m.ToString();
-            secLbl.Text = s.ToString();
+            minLbl.Text = string.Format("{0}", m.ToString().PadLeft(2, '0'));
+            secLbl.Text = string.Format("{0}", m.ToString().PadLeft(2, '0'));
+
         }
 
         private void Button1_Click(object sender, EventArgs e) { timer1.Stop(); Application.Restart(); }
