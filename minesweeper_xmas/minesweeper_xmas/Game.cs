@@ -65,9 +65,9 @@ namespace minesweeper_xmas
                         Location = new Point(30 + oszlop * 21, 70 + sor * 21),
                         Size = size,
                         Name = $"{sor}_{oszlop}",
-                        BackColor = Color.DarkGray,
                         Font = font,
                         AutoSize = false,
+                        BackColor = Color.DarkGray,
                         TextAlign = ContentAlignment.MiddleCenter
                     };
                     cellak[sor, oszlop] = new Cella(sor, oszlop, uj);
@@ -94,7 +94,7 @@ namespace minesweeper_xmas
                     for (int oszlop = 0; oszlop < GAME_WIDTH; oszlop++)
                     {
                         cellak[sor, oszlop].IsMine = board.Map[sor, oszlop] == 1;
-                        //if (cellak[sor, oszlop].IsMine) cellak[sor, oszlop].Lbl.BackColor = Color.Red;
+                        if (cellak[sor, oszlop].IsMine) cellak[sor, oszlop].Lbl.BackColor = Color.Red;
                     }
             }
 
@@ -118,6 +118,7 @@ namespace minesweeper_xmas
 
                         break;
                     }
+
                 case MouseButtons.Right:
                     {
                         /*
@@ -126,22 +127,30 @@ namespace minesweeper_xmas
                          * 2: akna van, zászlózva van
                          * 3: nincs akna, zászlózva van
                         */
+                        int minecount = Convert.ToInt32(mineCountLbl.Text);
 
                         if (cella.Revealed) return;
-                        if (!cella.Flagged)
+                        if (!cella.Flagged && minecount > 0) 
                         {
                             board.Map[koord_x, koord_y] = board.Map[koord_x, koord_y] == 1 ? 2 : 3;
                             cella.Flagged = true;
                             item.Text = "⚑";
+
+                            minecount--;
+                            mineCountLbl.Text = minecount.ToString();
                         }
-                        else
+                        else if (cella.Flagged)
                         {
                             board.Map[koord_x, koord_y] = board.Map[koord_x, koord_y] == 2 ? 1 : 0;
                             cella.Flagged = false;
                             item.Text = "";
+
+                            minecount++;
+                            mineCountLbl.Text = minecount.ToString();
                         }
                         break;
                     }
+
                 default:
                     break;
             }
@@ -153,12 +162,12 @@ namespace minesweeper_xmas
         {
             if (board.GetMines(x, y) == board.GetFlags(x, y))
             {
-                RevealTiles(x, y - 1);
-                RevealTiles(x, y + 1);
                 RevealTiles(x - 1, y);
                 RevealTiles(x + 1, y);
-                RevealTiles(x - 1, y + 1);
+                RevealTiles(x, y - 1);
+                RevealTiles(x, y + 1);
                 RevealTiles(x - 1, y - 1);
+                RevealTiles(x - 1, y + 1);
                 RevealTiles(x + 1, y + 1);
                 RevealTiles(x + 1, y - 1);
             }
@@ -170,6 +179,7 @@ namespace minesweeper_xmas
             Cella cella = cellak[x, y];
 
             if (cella.Revealed || cella.Flagged) return;
+            if (cella.IsMine) Lose(x, y);
 
             int count = board.GetMines(x, y);
 
@@ -179,12 +189,12 @@ namespace minesweeper_xmas
 
             if (count == 0)
             {
-                RevealTiles(x, y - 1);
-                RevealTiles(x, y + 1);
                 RevealTiles(x - 1, y);
                 RevealTiles(x + 1, y);
-                RevealTiles(x - 1, y + 1);
+                RevealTiles(x, y - 1);
+                RevealTiles(x, y + 1);
                 RevealTiles(x - 1, y - 1);
+                RevealTiles(x - 1, y + 1);
                 RevealTiles(x + 1, y + 1);
                 RevealTiles(x + 1, y - 1);
             }
@@ -230,7 +240,7 @@ namespace minesweeper_xmas
                     else if (board.Map[sor, oszlop] == 3) cellak[sor, oszlop].Lbl.BackColor = Color.LightCoral;
                 }
 
-            if (MessageBox.Show("Szeretnél újat kezdeni?", "Vesztettél", MessageBoxButtons.YesNo) == DialogResult.Yes) 
+            if (MessageBox.Show($"Szeretnél újat kezdeni? [{x}, {y}]", "Vesztettél", MessageBoxButtons.YesNo) == DialogResult.Yes) 
                 Application.Restart();
             else 
                 Application.Exit();
