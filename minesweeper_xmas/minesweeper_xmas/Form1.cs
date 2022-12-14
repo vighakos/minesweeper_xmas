@@ -19,12 +19,14 @@ namespace minesweeper_xmas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            if (mineNum.Value > widthNum.Value * heightNum.Value * Convert.ToDecimal(0.3))
-            {
-                mineNum.Value = Convert.ToInt32(widthNum.Value * heightNum.Value * Convert.ToDecimal(0.3));
-            }
-            new Game(Convert.ToInt32(widthNum.Value), Convert.ToInt32(heightNum.Value), Convert.ToInt32(mineNum.Value)).Show();
+            magas_lbl.Visible = true;
+            heightNum.Visible = true;
+            szeles_lbl.Visible = true;
+            widthNum.Visible = true;
+            bomba_lbl.Visible = true;
+            mineNum.Visible = true;
+            startBtn.Visible = true;
+            button1.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -43,6 +45,16 @@ namespace minesweeper_xmas
         {
             this.Hide();
             new Game(30, 16, 99).Show();
+        }
+
+        private void startBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            if (mineNum.Value > widthNum.Value * heightNum.Value)
+            {
+                mineNum.Value = Convert.ToInt32(widthNum.Value * heightNum.Value / 4);
+            }
+            new Game(Convert.ToInt32(widthNum.Value), Convert.ToInt32(heightNum.Value), Convert.ToInt32(mineNum.Value)).Show();
         }
     }
 }

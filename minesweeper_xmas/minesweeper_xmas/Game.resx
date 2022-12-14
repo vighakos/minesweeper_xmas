@@ -120,4 +120,29 @@
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA
+        AAD////////////////+/v7//f39///////9/v7/6+zt/+vs7f/9/v7///////39/f/+/v7/////////
+        ///////////////////+/v7///////j4+P+PkJX/MjM8/xQVIP8UFSD/MjM8/4+Qlf/4+Pj///////7+
+        /v/////////////////+/v7//////+7v8P86OkP/AAAA/wICA/8AAAf/AAAH/wICA/8AAAD/OTpD/+7u
+        7////////v7+/////////////f39//////9XWF3/AAAA/wYGE/8DAw7/AQEN/wEBDf8DAw7/BgYT/wAA
+        AP9WV1z///////39/f///////f39///////S09T/AgIJ/wICDv8AAAz/AAAM/wAADP8AAAz/AAAM/wAA
+        DP8CAg7/AgIJ/9LS1P///////f39//v7+///////oaKk/wAAAP8EBBD/AAAM/wAADP8AAAz/AAAM/wAA
+        DP8AAAz/BAQQ/wAAAP+goaT///////v7+//7+/v//////6Ojpv8AAAD/BAQQ/wAADP8AAAz/AAAM/wAA
+        DP8AAAz/AQEO/wcHD/8AAAb/oKGk///////7+/v//f39///////V1tf/AwQK/wEBDf8BAQ3/AAAM/wAB
+        Df8AAQ3/AQEO/wAAAP8jIyf/NTU7/8vMzv///////f39///////9/f3//////15fZP8AAAD/BgYS/wMD
+        D/8BAQr/AQEK/wEBDf8gICr/dHN5/29wd////////v7+/////////////v7+///////y8/P/Q0RN/wAA
+        AP8BAAD/BBYf/wUZIf8AAAD/bm51/42Ok//k5eb///////7+/v/////////////////+/v7//v7+//r7
+        +/+Ymp//ODM9/xI7RP8VPUb/OTQ+/56gpf/y8/P///////7+/v////////////////////////////7+
+        /v/9/f3//Pz9//////96mp//bpGX///////7/P3//v7+//7+/v//////////////////////////////
+        /////////v7///r6+v//////3+jp/0N1e/+cu8f/5+/1//f49///////////////////////////////
+        /////////////////////////f7+///////Y5N7/QZLP/53H6f////3//f7/////////////////////
+        ////////////////////////////////////////+vv7/9fq7P/l8PH/+/v7////////////////////
+        //////////////////////////////////////////////z8/P/6+vr/////////////////////////
+        ////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAA==
+</value>
+  </data>
 </root>

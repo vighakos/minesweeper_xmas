@@ -30,6 +30,7 @@ namespace minesweeper_xmas
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.restartBtn = new System.Windows.Forms.Button();
             this.mineCountLbl = new System.Windows.Forms.Label();
             this.minLbl = new System.Windows.Forms.Label();
@@ -106,6 +107,7 @@ namespace minesweeper_xmas
             this.Controls.Add(this.secLbl);
             this.Controls.Add(this.kettospotty);
             this.Controls.Add(this.minLbl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game";
