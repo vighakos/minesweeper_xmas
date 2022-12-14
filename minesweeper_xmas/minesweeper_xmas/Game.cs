@@ -94,7 +94,7 @@ namespace minesweeper_xmas
                     for (int oszlop = 0; oszlop < GAME_WIDTH; oszlop++)
                     {
                         cellak[sor, oszlop].IsMine = board.Map[sor, oszlop] == 1;
-                        //if (cellak[sor, oszlop].IsMine) cellak[sor, oszlop].Lbl.BackColor = Color.Red;
+                        if (cellak[sor, oszlop].IsMine) cellak[sor, oszlop].Lbl.BackColor = Color.Red;
                     }
             }
 
@@ -170,6 +170,11 @@ namespace minesweeper_xmas
             Cella cella = cellak[x, y];
 
             if (cella.Revealed || cella.Flagged) return;
+
+            if (cella.IsMine)
+            {
+                Lose(x,y);
+            }
 
             int count = board.GetMines(x, y);
 
