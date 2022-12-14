@@ -18,6 +18,7 @@ namespace minesweeper_xmas
         static int GAME_WIDTH, GAME_HEIGHT, MINES;
         static Cella[,] cellak;
         static Board board;
+        Image santa = System.Drawing.Bitmap.FromFile("evilsanta.png");
         public Game(int width, int height, int mines)
         {
             InitializeComponent();
@@ -226,13 +227,13 @@ namespace minesweeper_xmas
                     if (sor == x && oszlop == y)
                     {
                         cellak[sor, oszlop].Lbl.BackColor = Color.Red;
-                        cellak[sor, oszlop].Lbl.Text = "💣";
+                        cellak[sor, oszlop].Lbl.Image = santa;
                         continue;
                     }
                     if (board.Map[sor, oszlop] == 1)
                     {
                         cellak[sor, oszlop].Lbl.BackColor = Color.White;
-                        cellak[sor, oszlop].Lbl.Text = "💣";
+                        cellak[sor, oszlop].Lbl.Image = santa;
                     }
                     else if (board.Map[sor, oszlop] == 2) cellak[sor, oszlop].Lbl.BackColor = Color.Green;
                     else if (board.Map[sor, oszlop] == 3) cellak[sor, oszlop].Lbl.BackColor = Color.LightCoral;
