@@ -250,7 +250,7 @@ namespace minesweeper_xmas
         private void Game_Load(object sender, EventArgs e)
         {
             timer1.Start();
-            timer1.Interval = 100;
+            timer1.Interval = 1000;
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
