@@ -13,7 +13,8 @@ namespace minesweeper_xmas
 {
     public partial class Game : Form
     {
-        int m, s;
+        public int m = 0;
+        public int s = 0;
         static int GAME_WIDTH, GAME_HEIGHT, MINES;
         static Cella[,] cellak;
         static Board board;
@@ -249,22 +250,19 @@ namespace minesweeper_xmas
         private void Game_Load(object sender, EventArgs e)
         {
             timer1.Start();
+            timer1.Interval = 1000;
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            s = 0;
-            m = 0;
-
-            s += 1;
+            s++;
             if (s == 60 )
             {
                 s = 0;
                 m += 1;
             }
-            minLbl.Text = string.Format("{0}", m.ToString().PadLeft(2, '0'));
-            secLbl.Text = string.Format("{0}", m.ToString().PadLeft(2, '0'));
-
+            secLbl.Text = s.ToString();
+            minLbl.Text = m.ToString();
         }
 
         private void Button1_Click(object sender, EventArgs e) { timer1.Stop(); Application.Restart(); }
