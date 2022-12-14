@@ -95,7 +95,7 @@ namespace minesweeper_xmas
                     for (int oszlop = 0; oszlop < GAME_WIDTH; oszlop++)
                     {
                         cellak[sor, oszlop].IsMine = board.Map[sor, oszlop] == 1;
-                        if (cellak[sor, oszlop].IsMine) cellak[sor, oszlop].Lbl.BackColor = Color.Red;
+                        //if (cellak[sor, oszlop].IsMine) cellak[sor, oszlop].Lbl.BackColor = Color.Red;
                     }
             }
 
@@ -151,9 +151,6 @@ namespace minesweeper_xmas
                         }
                         break;
                     }
-
-                default:
-                    break;
             }
 
             WinCheck();
@@ -241,7 +238,7 @@ namespace minesweeper_xmas
                     else if (board.Map[sor, oszlop] == 3) cellak[sor, oszlop].Lbl.BackColor = Color.LightCoral;
                 }
 
-            if (MessageBox.Show($"Szeretnél újat kezdeni? [{x}, {y}]", "Vesztettél", MessageBoxButtons.YesNo) == DialogResult.Yes) 
+            if (MessageBox.Show($"Szeretnél újat kezdeni?", "Vesztettél", MessageBoxButtons.YesNo) == DialogResult.Yes) 
                 Application.Restart();
             else 
                 Application.Exit();
