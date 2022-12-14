@@ -56,5 +56,15 @@ namespace minesweeper_xmas
             }
             new Game(Convert.ToInt32(widthNum.Value), Convert.ToInt32(heightNum.Value), Convert.ToInt32(mineNum.Value)).Show();
         }
+
+        private void startBtn_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            if (mineNum.Value > widthNum.Value * heightNum.Value * Convert.ToDecimal(0.3))
+            {
+                mineNum.Value = Convert.ToInt32(widthNum.Value * heightNum.Value * Convert.ToDecimal(0.3));
+            }
+            new Game(Convert.ToInt32(widthNum.Value), Convert.ToInt32(heightNum.Value), Convert.ToInt32(mineNum.Value)).Show();
+        }
     }
 }
