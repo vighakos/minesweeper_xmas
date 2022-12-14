@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\minesweeper_xmas",
+    "\\minesweeper_xmas\\minesweeper_xmas"
   ],
+  "SelectedNode": "\\minesweeper_xmas\\minesweeper_xmas\\Game.Designer.cs",
   "PreviewInSolutionExplorer": false
 }

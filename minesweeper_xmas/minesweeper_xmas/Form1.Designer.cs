@@ -29,6 +29,7 @@ namespace minesweeper_xmas
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.szeles_lbl = new System.Windows.Forms.Label();
             this.magas_lbl = new System.Windows.Forms.Label();
             this.bomba_lbl = new System.Windows.Forms.Label();
@@ -39,9 +40,11 @@ namespace minesweeper_xmas
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.widthNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.heightNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mineNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // szeles_lbl
@@ -176,6 +179,16 @@ namespace minesweeper_xmas
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(599, 370);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,6 +204,8 @@ namespace minesweeper_xmas
             this.Controls.Add(this.bomba_lbl);
             this.Controls.Add(this.magas_lbl);
             this.Controls.Add(this.szeles_lbl);
+            this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(612, 408);
             this.MinimumSize = new System.Drawing.Size(612, 408);
             this.Name = "Form1";
@@ -199,6 +214,7 @@ namespace minesweeper_xmas
             ((System.ComponentModel.ISupportInitialize)(this.widthNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.heightNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mineNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,6 +232,7 @@ namespace minesweeper_xmas
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
