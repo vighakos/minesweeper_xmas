@@ -247,19 +247,43 @@ namespace minesweeper_xmas
         private void Game_Load(object sender, EventArgs e)
         {
             timer1.Start();
-            timer1.Interval = 1000;
+            timer1.Interval = 100;
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
-        {
+        {   /* backup
             s++;
-            if (s == 60 )
+            if (s == 60)
             {
                 s = 0;
                 m += 1;
             }
             secLbl.Text = s.ToString();
             minLbl.Text = m.ToString();
+            */
+
+            s++;
+            if (s == 60 )
+            {
+                s = 0;
+                m += 1;
+            }
+            if (s < 10)
+            {
+                secLbl.Text = "0" + s.ToString();
+            }
+            if (s >= 10)
+            {
+                secLbl.Text = s.ToString();
+            }
+            if (m < 10)
+            {
+               minLbl.Text = "0" + m.ToString();
+            }
+            if (m >= 10)
+            {
+                minLbl.Text = m.ToString();
+            }
         }
 
         private void Button1_Click(object sender, EventArgs e) { timer1.Stop(); Application.Restart(); }
