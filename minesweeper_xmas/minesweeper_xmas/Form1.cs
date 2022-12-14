@@ -29,23 +29,20 @@ namespace minesweeper_xmas
 
         private void button2_Click(object sender, EventArgs e)
         {
-            widthNum.Value = 8;
-            heightNum.Value = 8;
-            mineNum.Value = 10;
+            this.Hide();
+            new Game(8, 8, 10).Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            widthNum.Value = 16;
-            heightNum.Value = 16;
-            mineNum.Value = 40;
+            this.Hide();
+            new Game(16, 16, 40).Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            widthNum.Value = 30;
-            heightNum.Value = 16;
-            mineNum.Value = 99;
+            this.Hide();
+            new Game(30, 16, 99).Show();
         }
     }
 }
