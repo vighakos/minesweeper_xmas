@@ -86,6 +86,11 @@ namespace minesweeper_xmas
             // widthNum
             // 
             this.widthNum.Location = new System.Drawing.Point(288, 121);
+            this.widthNum.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.widthNum.Minimum = new decimal(new int[] {
             8,
             0,
@@ -103,6 +108,11 @@ namespace minesweeper_xmas
             // heightNum
             // 
             this.heightNum.Location = new System.Drawing.Point(288, 95);
+            this.heightNum.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.heightNum.Minimum = new decimal(new int[] {
             8,
             0,
@@ -121,12 +131,12 @@ namespace minesweeper_xmas
             // 
             this.mineNum.Location = new System.Drawing.Point(288, 147);
             this.mineNum.Maximum = new decimal(new int[] {
-            200,
+            2500,
             0,
             0,
             0});
             this.mineNum.Minimum = new decimal(new int[] {
-            10,
+            1,
             0,
             0,
             0});
