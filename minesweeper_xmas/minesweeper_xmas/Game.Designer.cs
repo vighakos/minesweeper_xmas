@@ -54,7 +54,7 @@ namespace minesweeper_xmas
             this.mineCountLbl.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.mineCountLbl.Location = new System.Drawing.Point(30, 15);
             this.mineCountLbl.Name = "mineCountLbl";
-            this.mineCountLbl.Size = new System.Drawing.Size(35, 35);
+            this.mineCountLbl.Size = new System.Drawing.Size(50, 35);
             this.mineCountLbl.TabIndex = 4;
             this.mineCountLbl.Text = "00";
             this.mineCountLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
