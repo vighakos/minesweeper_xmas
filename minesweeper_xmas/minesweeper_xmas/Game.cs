@@ -203,12 +203,17 @@ namespace minesweeper_xmas
 
         private void WinCheck()
         {
+            bool nyitott = false;
             int count = 0;
             for (int sor = 0; sor < GAME_HEIGHT; sor++)
             {
                 for (int oszlop = 0; oszlop < GAME_WIDTH; oszlop++)
                 {
                     if (board.Map[sor, oszlop] == 2) count++;
+                    if (cellak[sor, oszlop].Revealed && board.Map[sor, oszlop] == 0)
+                    {
+
+                    }
                 }
             }
 
@@ -223,6 +228,7 @@ namespace minesweeper_xmas
 
         private void Lose(int x, int y)
         {
+            timer1.Stop();
             for (int sor = 0; sor < GAME_HEIGHT; sor++)
                 for (int oszlop = 0; oszlop < GAME_WIDTH; oszlop++)
                 {

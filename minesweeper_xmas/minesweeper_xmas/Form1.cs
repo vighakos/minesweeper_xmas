@@ -25,7 +25,7 @@ namespace minesweeper_xmas
             widthNum.Visible = true;
             bomba_lbl.Visible = true;
             mineNum.Visible = true;
-            startBtn.Visible = true;
+            //startBtn.Visible = true;
             button1.Visible = false;
         }
 
