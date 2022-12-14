@@ -41,7 +41,6 @@ namespace minesweeper_xmas
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.startBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.widthNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.heightNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mineNum)).BeginInit();
@@ -54,12 +53,11 @@ namespace minesweeper_xmas
             this.szeles_lbl.BackColor = System.Drawing.Color.Transparent;
             this.szeles_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.szeles_lbl.ForeColor = System.Drawing.Color.Black;
-            this.szeles_lbl.Location = new System.Drawing.Point(174, 162);
+            this.szeles_lbl.Location = new System.Drawing.Point(142, 122);
             this.szeles_lbl.Name = "szeles_lbl";
             this.szeles_lbl.Size = new System.Drawing.Size(139, 20);
             this.szeles_lbl.TabIndex = 0;
             this.szeles_lbl.Text = "Pálya szélessége: ";
-            this.szeles_lbl.Visible = false;
             // 
             // magas_lbl
             // 
@@ -67,12 +65,11 @@ namespace minesweeper_xmas
             this.magas_lbl.BackColor = System.Drawing.Color.Transparent;
             this.magas_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.magas_lbl.ForeColor = System.Drawing.Color.Black;
-            this.magas_lbl.Location = new System.Drawing.Point(174, 135);
+            this.magas_lbl.Location = new System.Drawing.Point(142, 95);
             this.magas_lbl.Name = "magas_lbl";
             this.magas_lbl.Size = new System.Drawing.Size(142, 20);
             this.magas_lbl.TabIndex = 1;
             this.magas_lbl.Text = "Pálya magassága: ";
-            this.magas_lbl.Visible = false;
             // 
             // bomba_lbl
             // 
@@ -80,16 +77,20 @@ namespace minesweeper_xmas
             this.bomba_lbl.BackColor = System.Drawing.Color.Transparent;
             this.bomba_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.bomba_lbl.ForeColor = System.Drawing.Color.Black;
-            this.bomba_lbl.Location = new System.Drawing.Point(174, 187);
+            this.bomba_lbl.Location = new System.Drawing.Point(142, 147);
             this.bomba_lbl.Name = "bomba_lbl";
             this.bomba_lbl.Size = new System.Drawing.Size(124, 20);
             this.bomba_lbl.TabIndex = 2;
             this.bomba_lbl.Text = "Télapók száma: ";
-            this.bomba_lbl.Visible = false;
             // 
             // widthNum
             // 
-            this.widthNum.Location = new System.Drawing.Point(320, 161);
+            this.widthNum.Location = new System.Drawing.Point(288, 121);
+            this.widthNum.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.widthNum.Minimum = new decimal(new int[] {
             8,
             0,
@@ -103,11 +104,15 @@ namespace minesweeper_xmas
             0,
             0,
             0});
-            this.widthNum.Visible = false;
             // 
             // heightNum
             // 
-            this.heightNum.Location = new System.Drawing.Point(320, 135);
+            this.heightNum.Location = new System.Drawing.Point(288, 95);
+            this.heightNum.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.heightNum.Minimum = new decimal(new int[] {
             8,
             0,
@@ -121,18 +126,17 @@ namespace minesweeper_xmas
             0,
             0,
             0});
-            this.heightNum.Visible = false;
             // 
             // mineNum
             // 
-            this.mineNum.Location = new System.Drawing.Point(320, 187);
+            this.mineNum.Location = new System.Drawing.Point(288, 147);
             this.mineNum.Maximum = new decimal(new int[] {
-            200,
+            2500,
             0,
             0,
             0});
             this.mineNum.Minimum = new decimal(new int[] {
-            10,
+            1,
             0,
             0,
             0});
@@ -144,11 +148,10 @@ namespace minesweeper_xmas
             0,
             0,
             0});
-            this.mineNum.Visible = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(240, 169);
+            this.button1.Location = new System.Drawing.Point(208, 220);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 52);
             this.button1.TabIndex = 6;
@@ -158,7 +161,7 @@ namespace minesweeper_xmas
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(178, 97);
+            this.button2.Location = new System.Drawing.Point(146, 182);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 7;
@@ -168,7 +171,7 @@ namespace minesweeper_xmas
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(259, 97);
+            this.button3.Location = new System.Drawing.Point(227, 182);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 8;
@@ -178,7 +181,7 @@ namespace minesweeper_xmas
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(340, 97);
+            this.button4.Location = new System.Drawing.Point(308, 182);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 9;
@@ -196,23 +199,11 @@ namespace minesweeper_xmas
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // startBtn
-            // 
-            this.startBtn.Location = new System.Drawing.Point(240, 231);
-            this.startBtn.Name = "startBtn";
-            this.startBtn.Size = new System.Drawing.Size(113, 52);
-            this.startBtn.TabIndex = 11;
-            this.startBtn.Text = "Start";
-            this.startBtn.UseVisualStyleBackColor = true;
-            this.startBtn.Visible = false;
-            this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(596, 369);
-            this.Controls.Add(this.startBtn);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -252,7 +243,6 @@ namespace minesweeper_xmas
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button startBtn;
     }
 }
 

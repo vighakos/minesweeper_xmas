@@ -95,7 +95,7 @@ namespace minesweeper_xmas
                     for (int oszlop = 0; oszlop < GAME_WIDTH; oszlop++)
                     {
                         cellak[sor, oszlop].IsMine = board.Map[sor, oszlop] == 1;
-                        if (cellak[sor, oszlop].IsMine) cellak[sor, oszlop].Lbl.BackColor = Color.Red;
+                        //if (cellak[sor, oszlop].IsMine) cellak[sor, oszlop].Lbl.BackColor = Color.Red;
                     }
             }
 
@@ -151,9 +151,6 @@ namespace minesweeper_xmas
                         }
                         break;
                     }
-
-                default:
-                    break;
             }
 
             WinCheck();
@@ -241,7 +238,7 @@ namespace minesweeper_xmas
                     else if (board.Map[sor, oszlop] == 3) cellak[sor, oszlop].Lbl.BackColor = Color.LightCoral;
                 }
 
-            if (MessageBox.Show($"Szeretnél újat kezdeni? [{x}, {y}]", "Vesztettél", MessageBoxButtons.YesNo) == DialogResult.Yes) 
+            if (MessageBox.Show($"Szeretnél újat kezdeni?", "Vesztettél", MessageBoxButtons.YesNo) == DialogResult.Yes) 
                 Application.Restart();
             else 
                 Application.Exit();
@@ -254,15 +251,39 @@ namespace minesweeper_xmas
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
-        {
+        {   /* backup
             s++;
-            if (s == 60 )
+            if (s == 60)
             {
                 s = 0;
                 m += 1;
             }
             secLbl.Text = s.ToString();
             minLbl.Text = m.ToString();
+            */
+
+            s++;
+            if (s == 60 )
+            {
+                s = 0;
+                m += 1;
+            }
+            if (s < 10)
+            {
+                secLbl.Text = "0" + s.ToString();
+            }
+            if (s >= 10)
+            {
+                secLbl.Text = s.ToString();
+            }
+            if (m < 10)
+            {
+               minLbl.Text = "0" + m.ToString();
+            }
+            if (m >= 10)
+            {
+                minLbl.Text = m.ToString();
+            }
         }
 
         private void Button1_Click(object sender, EventArgs e) { timer1.Stop(); Application.Restart(); }
