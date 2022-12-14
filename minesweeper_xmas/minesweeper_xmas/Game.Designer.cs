@@ -42,7 +42,7 @@ namespace minesweeper_xmas
             // restartBtn
             // 
             this.restartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.restartBtn.Location = new System.Drawing.Point(94, 14);
+            this.restartBtn.Location = new System.Drawing.Point(103, 37);
             this.restartBtn.Name = "restartBtn";
             this.restartBtn.Size = new System.Drawing.Size(36, 36);
             this.restartBtn.TabIndex = 3;
@@ -53,7 +53,7 @@ namespace minesweeper_xmas
             // mineCountLbl
             // 
             this.mineCountLbl.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.mineCountLbl.Location = new System.Drawing.Point(30, 15);
+            this.mineCountLbl.Location = new System.Drawing.Point(38, 32);
             this.mineCountLbl.Name = "mineCountLbl";
             this.mineCountLbl.Size = new System.Drawing.Size(50, 35);
             this.mineCountLbl.TabIndex = 4;
@@ -63,7 +63,7 @@ namespace minesweeper_xmas
             // minLbl
             // 
             this.minLbl.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.minLbl.Location = new System.Drawing.Point(148, 15);
+            this.minLbl.Location = new System.Drawing.Point(145, 32);
             this.minLbl.Name = "minLbl";
             this.minLbl.Size = new System.Drawing.Size(35, 35);
             this.minLbl.TabIndex = 0;
@@ -73,7 +73,7 @@ namespace minesweeper_xmas
             // kettospotty
             // 
             this.kettospotty.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.kettospotty.Location = new System.Drawing.Point(178, 20);
+            this.kettospotty.Location = new System.Drawing.Point(175, 37);
             this.kettospotty.Name = "kettospotty";
             this.kettospotty.Size = new System.Drawing.Size(12, 20);
             this.kettospotty.TabIndex = 1;
@@ -83,7 +83,7 @@ namespace minesweeper_xmas
             // secLbl
             // 
             this.secLbl.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.secLbl.Location = new System.Drawing.Point(185, 15);
+            this.secLbl.Location = new System.Drawing.Point(182, 32);
             this.secLbl.Name = "secLbl";
             this.secLbl.Size = new System.Drawing.Size(35, 35);
             this.secLbl.TabIndex = 2;
@@ -101,12 +101,14 @@ namespace minesweeper_xmas
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(244, 415);
             this.Controls.Add(this.mineCountLbl);
             this.Controls.Add(this.restartBtn);
             this.Controls.Add(this.secLbl);
             this.Controls.Add(this.kettospotty);
             this.Controls.Add(this.minLbl);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
