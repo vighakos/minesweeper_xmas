@@ -36,6 +36,7 @@ namespace minesweeper_xmas
 
         private void FormSetup()
         {
+            timer1.Stop();
             this.BackColor = Color.FromArgb(192, 192, 192);
             this.Size = new Size(75 + GAME_WIDTH * 21, 150 + GAME_HEIGHT * 21);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -97,6 +98,8 @@ namespace minesweeper_xmas
                         cellak[sor, oszlop].IsMine = board.Map[sor, oszlop] == 1;
                         //if (cellak[sor, oszlop].IsMine) cellak[sor, oszlop].Lbl.BackColor = Color.Red;
                     }
+
+                timer1.Start();
             }
 
             int count = board.GetMines(koord_x, koord_y);
@@ -244,24 +247,8 @@ namespace minesweeper_xmas
                 Application.Exit();
         }
 
-        private void Game_Load(object sender, EventArgs e)
-        {
-            timer1.Start();
-            timer1.Interval = 1000;
-        }
-
         private void Timer1_Tick(object sender, EventArgs e)
-        {   /* backup
-            s++;
-            if (s == 60)
-            {
-                s = 0;
-                m += 1;
-            }
-            secLbl.Text = s.ToString();
-            minLbl.Text = m.ToString();
-            */
-
+        {
             s++;
             if (s == 60 )
             {
