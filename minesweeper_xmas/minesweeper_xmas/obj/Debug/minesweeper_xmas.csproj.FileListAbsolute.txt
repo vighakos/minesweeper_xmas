@@ -9,7 +9,6 @@ H:\214szft\aszmo projektek\minesweeper\minesweeper_xmas\minesweeper_xmas\obj\Deb
 D:\214szft\xmas\minesweeper_xmas\minesweeper_xmas\bin\Debug\minesweeper_xmas.exe.config
 D:\214szft\xmas\minesweeper_xmas\minesweeper_xmas\bin\Debug\minesweeper_xmas.exe
 D:\214szft\xmas\minesweeper_xmas\minesweeper_xmas\bin\Debug\minesweeper_xmas.pdb
-D:\214szft\xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.csproj.AssemblyReference.cache
 D:\214szft\xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.Properties.Resources.resources
 D:\214szft\xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.csproj.GenerateResource.cache
 D:\214szft\xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.csproj.CoreCompileInputs.cache
@@ -74,3 +73,5 @@ D:\214szft\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.csproj.G
 D:\214szft\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.csproj.CoreCompileInputs.cache
 D:\214szft\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.exe
 D:\214szft\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.pdb
+D:\214szft\xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.csprojAssemblyReference.cache
+D:\214szft\xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.Game.resources

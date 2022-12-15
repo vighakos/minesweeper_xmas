@@ -237,12 +237,14 @@ namespace minesweeper_xmas
                     {
                         cellak[sor, oszlop].Lbl.BackColor = Color.Red;
                         cellak[sor, oszlop].Lbl.Image = santa;
+                        cellak[sor, oszlop].Lbl.ImageAlign = ContentAlignment.MiddleCenter;
                         continue;
                     }
                     if (board.Map[sor, oszlop] == 1)
                     {
                         cellak[sor, oszlop].Lbl.BackColor = Color.White;
                         cellak[sor, oszlop].Lbl.Image = santa;
+                        cellak[sor, oszlop].Lbl.ImageAlign = ContentAlignment.MiddleCenter;
                     }
                     else if (board.Map[sor, oszlop] == 2) cellak[sor, oszlop].Lbl.BackColor = Color.Green;
                     else if (board.Map[sor, oszlop] == 3) cellak[sor, oszlop].Lbl.BackColor = Color.LightCoral;
