@@ -51,7 +51,6 @@ C:\Users\imker\OneDrive\Asztali gép\Github\Repok\vighakos\minesweeper_xmas\mine
 C:\Users\imker\OneDrive\Asztali gép\Github\Repok\vighakos\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.csproj.CoreCompileInputs.cache
 C:\Users\imker\OneDrive\Asztali gép\Github\Repok\vighakos\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.exe
 C:\Users\imker\OneDrive\Asztali gép\Github\Repok\vighakos\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.pdb
-H:\214szft\aszmo projektek\minesweeper\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.csproj.AssemblyReference.cache
 D:\KI Github\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.csproj.AssemblyReference.cache
 D:\KI Github\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.Form1.resources
 D:\KI Github\minesweeper_xmas\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.Game.resources
@@ -74,3 +73,4 @@ D:\214szft\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.csproj.G
 D:\214szft\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.csproj.CoreCompileInputs.cache
 D:\214szft\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.exe
 D:\214szft\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.pdb
+H:\214szft\aszmo projektek\minesweeper\minesweeper_xmas\minesweeper_xmas\obj\Debug\minesweeper_xmas.csprojAssemblyReference.cache

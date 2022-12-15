@@ -71,7 +71,8 @@ namespace minesweeper_xmas
                         Font = font,
                         AutoSize = false,
                         BackColor = Color.DarkGray,
-                        TextAlign = ContentAlignment.MiddleCenter
+                        TextAlign = ContentAlignment.MiddleCenter,
+                        ImageAlign = ContentAlignment.MiddleCenter
                     };
                     cellak[sor, oszlop] = new Cella(sor, oszlop, uj);
                     uj.Click += new EventHandler(Lbl_Click);
@@ -204,21 +205,18 @@ namespace minesweeper_xmas
 
         private void WinCheck()
         {
-            bool nyitott = false;
+            bool nyitott = true;
             int count = 0;
             for (int sor = 0; sor < GAME_HEIGHT; sor++)
             {
                 for (int oszlop = 0; oszlop < GAME_WIDTH; oszlop++)
                 {
                     if (board.Map[sor, oszlop] == 2) count++;
-                    if (cellak[sor, oszlop].Revealed && board.Map[sor, oszlop] == 0)
-                    {
-
-                    }
+                    if (!cellak[sor, oszlop].Revealed && board.Map[sor, oszlop] == 0) nyitott = false;
                 }
             }
 
-            if (count == MINES)
+            if (count == MINES && nyitott)
             {
                 if (MessageBox.Show("Szeretnél újat játszani?", "Nyertél", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     Application.Restart();
