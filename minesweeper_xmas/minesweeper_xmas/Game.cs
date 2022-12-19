@@ -211,7 +211,7 @@ namespace minesweeper_xmas
                 for (int oszlop = 0; oszlop < GAME_WIDTH; oszlop++)
                 {
                     if (board.Map[sor, oszlop] == 2) count++;
-                    if (!cellak[sor, oszlop].Revealed && board.Map[sor, oszlop] == 0) break;
+                    if (!cellak[sor, oszlop].Revealed && board.Map[sor, oszlop] == 0) return;
                 }
             }
 
