@@ -205,19 +205,21 @@ namespace minesweeper_xmas
 
         private void WinCheck()
         {
-            bool nyitott = true;
             int count = 0;
             for (int sor = 0; sor < GAME_HEIGHT; sor++)
             {
                 for (int oszlop = 0; oszlop < GAME_WIDTH; oszlop++)
                 {
                     if (board.Map[sor, oszlop] == 2) count++;
-                    if (!cellak[sor, oszlop].Revealed && board.Map[sor, oszlop] == 0) nyitott = false;
+                    if (!cellak[sor, oszlop].Revealed && board.Map[sor, oszlop] == 0) return;
                 }
             }
 
-            if (count == MINES && nyitott)
+            if (count == MINES)
             {
+                foreach (Cella item in cellak)
+                    if (item.Flagged) item.Lbl.BackColor = Color.Green;
+
                 if (MessageBox.Show("Szeretnél újat játszani?", "Nyertél", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     Application.Restart();
                 else
